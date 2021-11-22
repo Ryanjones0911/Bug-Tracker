@@ -24,4 +24,8 @@ int main()
 	{
 		currApp.GetFileContents();
 	}
+	if (userchoice == 3)
+	{
+		cout << "Goodbye";
+	}
 }
