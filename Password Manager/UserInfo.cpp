@@ -1,21 +1,16 @@
+#include "UserInfo.h"
 #include <iostream>
 #include <string>
 #include "File.h";
-#include "UserInfo.h"
-using namespace std;
 
-/* Login page project. Will likely use this to keep League account info & other info similar to that */
-
-int main()
+void UserInfo::SetAppUserandPass()
 {
-	UserInfo Ryan;
+	File currApp;
+	int userChoice;
+	string userFileName;
 
-<<<<<<< HEAD
-	Ryan.SetAppUserandPass();
-}
-=======
 	userChoice = currApp.GetUserChoice();
-	
+
 	if (userChoice == 1)
 	{
 		userFileName = currApp.AddNewFile();
@@ -32,4 +27,3 @@ int main()
 		cout << "Goodbye";
 	}
 }
->>>>>>> 1d511da2874dcdf5df072bd54726519556bafcce
