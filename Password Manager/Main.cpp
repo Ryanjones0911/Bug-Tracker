@@ -9,27 +9,5 @@ using namespace std;
 int main()
 {
 	UserInfo Ryan;
-
-<<<<<<< HEAD
 	Ryan.SetAppUserandPass();
 }
-=======
-	userChoice = currApp.GetUserChoice();
-	
-	if (userChoice == 1)
-	{
-		userFileName = currApp.AddNewFile();
-		currApp.SetUsername(userFileName);
-		currApp.SetPassword(userFileName);
-	}
-
-	if (userChoice == 2)
-	{
-		currApp.GetFileContents();
-	}
-	if (userChoice == 3)
-	{
-		cout << "Goodbye";
-	}
-}
->>>>>>> 1d511da2874dcdf5df072bd54726519556bafcce
