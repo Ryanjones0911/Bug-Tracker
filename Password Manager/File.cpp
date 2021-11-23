@@ -32,22 +32,26 @@ void File::SetPassword(string userFile)
 string File::AddNewFile()
 {
 	ofstream myFile;
+	string path = "C:\\Users\\Ryan\\source\\repos\\Password Manager\\Password Manager\\User Profiles\\";
 	string userFileName;
 
-	cout << "Enter app name: ";
+	cout << "Enter name of user: ";
 	cin.ignore(); //ignores trailing newline character leftover in cin from userChoice
 	getline(cin, userFileName);
 
-	myFile.open(userFileName);
+	userFileName += ".txt";
+	path += userFileName;
+	myFile.open(path);
 	cout << "File Created successfully";
-	return userFileName;
+	myFile.close();
+	return path;
 }
 
 int File::GetUserChoice()
 {
 	int userChoice;
 
-	cout << "Input 1 for new app info, 2 to check info submitted prior, or 3 to quit: " << endl;
+	cout << "Input 1 for new user info, 2 to check/edit info submitted prior, or 3 to quit: " << endl;
 	cin >> userChoice;
 
 	return userChoice;
@@ -59,15 +63,17 @@ void File::GetFileContents()
 	string line;
 	ifstream myFile;
 
-	cout << "Enter name of file you wish to check: ";
+	cout << "Enter name of user you wish to check: ";
 	cin.ignore(); // ignores prior newline character
 	getline(cin, desiredFile);
+	desiredFile += ".txt";
+
 
 	myFile.open(desiredFile);
 
 	if (myFile.is_open())
 	{
-		cout << "file located & opened. Contents are as follows:" << endl;
+		cout << "user located & opened. Contents are as follows:" << endl;
 		while (getline(myFile, line))
 			{
 			cout << line << endl;
@@ -76,6 +82,6 @@ void File::GetFileContents()
 	}
 	else;
 	{
-		cout << "Could not locate file";
+		cout << "Could not locate user";
 	}
 }
