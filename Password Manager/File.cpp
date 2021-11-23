@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include "File.h"
+#include <filesystem>
 using namespace std;
 
 
@@ -32,7 +33,7 @@ void File::SetPassword(string userFile)
 string File::AddNewFile()
 {
 	ofstream myFile;
-	string path = "C:\\Users\\Ryan\\source\\repos\\Password Manager\\Password Manager\\User Profiles\\";
+	string path = std::filesystem::current_path().string() + "\\User Profiles\\"; //sets path variable to current directory
 	string userFileName;
 
 	cout << "Enter name of user: ";
@@ -41,8 +42,9 @@ string File::AddNewFile()
 
 	userFileName += ".txt";
 	path += userFileName;
+	cout << path << endl;
 	myFile.open(path);
-	cout << "File Created successfully";
+	cout << "File Created successfully" << endl;
 	myFile.close();
 	return path;
 }
