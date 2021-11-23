@@ -11,6 +11,6 @@ the world.
 
 
 11/23/21: User created files (now named after the user and stored as user's name .txt) are now saved to sub directory named User Profiles. This is intended to make it easier to test with these files as well as keeps them all in one place to remove clutter from main project directory. As currently shown this will not actually work across devices, but it does get the idea down until I figure out how to reference the path relatively vs as an absolute. Probably should have waited and just committed the relative solution, but ¯\_(ツ)_/¯  
-  As far as I can tell this has now been fixed. File creation uses relative path finding and should now work on any machine in theory. Next task is to ensure creation of directory UserProfiles if it is not already present. Given the long term plan to move this data onto a databse, the fact that this work is all largely a waste of time has not been lost on me. Consider it a proof of concept, and if it works then it'll be moved to a DB.
+ EDIT:: As far as I can tell this has now been fixed. File creation uses relative path finding and should now work on any machine in theory. Next task is to ensure creation of directory UserProfiles if it is not already present. Given the long term plan to move this data onto a databse, the fact that this work is all largely a waste of time has not been lost on me. Consider it a proof of concept, and if it works then it'll be moved to a DB.
   
 
