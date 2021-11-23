@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "File.h"
 #include <filesystem>
+#include "File.h"
 using namespace std;
 
 
@@ -33,7 +33,7 @@ void File::SetPassword(string userFile)
 string File::AddNewFile()
 {
 	ofstream myFile;
-	string path = std::filesystem::current_path().string() + "\\User Profiles\\"; //sets path variable to current directory
+	string path = std::filesystem::current_path().string() + "\\User Profiles\\"; //sets path variable to current directory & moves to folder UserProfiles
 	string userFileName;
 
 	cout << "Enter name of user: ";
@@ -42,13 +42,13 @@ string File::AddNewFile()
 
 	userFileName += ".txt";
 	path += userFileName;
-	cout << path << endl;
 	myFile.open(path);
 	cout << "File Created successfully" << endl;
 	myFile.close();
 	return path;
 }
 
+//Logic that allows user to choose what they want to do with the file system
 int File::GetUserChoice()
 {
 	int userChoice;
@@ -59,27 +59,30 @@ int File::GetUserChoice()
 	return userChoice;
 }
 
+//Allows a user to input a file and have the system display to screen all content within the file
 void File::GetFileContents()
 {
 	string desiredFile;
+	string path = std::filesystem::current_path().string() + "\\User Profiles\\";
 	string line;
 	ifstream myFile;
 
 	cout << "Enter name of user you wish to check: ";
-	cin.ignore(); // ignores prior newline character
+	cin.ignore();	// ignores prior newline character
 	getline(cin, desiredFile);
 	desiredFile += ".txt";
+	path += desiredFile;
 
-
-	myFile.open(desiredFile);
+	myFile.open(path);
 
 	if (myFile.is_open())
 	{
-		cout << "user located & opened. Contents are as follows:" << endl;
+		cout << "user located &opened. Contents are as follows:" << endl;
 		while (getline(myFile, line))
-			{
+		{
 			cout << line << endl;
-			}
+		}
+
 		return;
 	}
 	else;

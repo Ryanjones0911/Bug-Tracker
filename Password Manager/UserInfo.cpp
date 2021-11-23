@@ -3,6 +3,8 @@
 #include <string>
 #include "File.h"
 
+
+/* Allows user to interact with the file system, though its main purpose is to create username/password */
 void UserInfo::SetAppUserandPass()
 {
 	File currApp;

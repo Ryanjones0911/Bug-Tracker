@@ -2,12 +2,11 @@
 #include <string>
 #include "File.h"
 #include "UserInfo.h"
-#include <fstream>
-#include <filesystem>
 using namespace std;
 
 
-/* Login page project. Will likely use this to keep League account info & other info similar to that */
+/* Intent is to make a simple ticketing system that can be used to keep track of bugs and other issues. 
+   Right now it just reads and writes to text files but everything starts somewhere. */
 
 int main()
 {
