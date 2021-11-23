@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "File.h";
+#include "File.h"
 #include "UserInfo.h"
 #include <fstream>
 using namespace std;

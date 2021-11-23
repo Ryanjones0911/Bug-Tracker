@@ -1,7 +1,7 @@
 #include "UserInfo.h"
 #include <iostream>
 #include <string>
-#include "File.h";
+#include "File.h"
 
 void UserInfo::SetAppUserandPass()
 {
