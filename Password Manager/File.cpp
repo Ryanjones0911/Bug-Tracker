@@ -36,6 +36,13 @@ string File::AddNewFile()
 	string path = std::filesystem::current_path().string() + "\\User Profiles\\"; //sets path variable to current directory & moves to folder UserProfiles
 	string userFileName;
 
+	//if UserProfiles directory does not already exist, create it
+	if (!(std::filesystem::exists(path)))
+	{
+		cout << "created User Profiles folder" << endl;
+		std::filesystem::create_directory(path);
+	}
+
 	cout << "Enter name of user: ";
 	cin.ignore(); //ignores trailing newline character leftover in cin from userChoice
 	getline(cin, userFileName);
@@ -77,7 +84,7 @@ void File::GetFileContents()
 
 	if (myFile.is_open())
 	{
-		cout << "user located &opened. Contents are as follows:" << endl;
+		cout << "user located & opened. Contents are as follows:" << endl;
 		while (getline(myFile, line))
 		{
 			cout << line << endl;

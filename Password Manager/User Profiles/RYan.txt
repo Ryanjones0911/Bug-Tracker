@@ -1,2 +1,0 @@
-username: This is a user
-Password: this is a password
