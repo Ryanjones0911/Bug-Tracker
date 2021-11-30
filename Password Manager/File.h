@@ -12,5 +12,8 @@ class File
 
 		//functions for viewing files & data
 		void GetFileContents();
+		void Login(string userProfile);
+		//string GetUsername();
+		//string GetPassword();
 };
 

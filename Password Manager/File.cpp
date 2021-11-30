@@ -60,13 +60,13 @@ int File::GetUserChoice()
 {
 	int userChoice;
 
-	cout << "Input 1 for new user info, 2 to check/edit info submitted prior, or 3 to quit: " << endl;
+	cout << "Input 1 for new user info, 2 to check info for a user(TEST LOGIN FUNCTION), or 3 to quit: " << endl;
 	cin >> userChoice;
 
 	return userChoice;
 }
 
-//Allows a user to input a file and have the system display to screen all content within the file
+//Gets contents of user file to be used by login function
 void File::GetFileContents()
 {
 	string desiredFile;
@@ -89,7 +89,7 @@ void File::GetFileContents()
 		{
 			cout << line << endl;
 		}
-
+		myFile.close();
 		return;
 	}
 	else;
@@ -97,3 +97,60 @@ void File::GetFileContents()
 		cout << "Could not locate user";
 	}
 }
+
+void File::Login(string userProfile)
+{
+	ifstream file;
+	string path = std::filesystem::current_path().string() + "\\User Profiles\\"; //leads to userprofile directory. Should find a better way to save this variable. Maybe new function?
+	string userFile = path + userProfile + ".txt";
+	string line; //for searching text file
+	string username;
+	string password;
+	int i;
+
+	//open file of user trying to login (info in userProfile)
+	file.open(userFile);
+
+	//checks if file is open, and if it is checks that user entered username & password match file record
+	if (file.is_open())
+	{
+		cout << "file located & opened" << endl;
+		cout << "Enter username: ";
+		cin >> username;
+
+		while (!file.eof()) //while we have not reached the end of the file
+		{
+			while (getline(file, line)) //get current line of the file until the end of the file is reached
+			{
+				if (line == username)
+				{
+					cout << "Username found. Enter Password: ";
+					cin >> password;
+				}
+				if (line == password)
+				{
+					cout << "Password found. Login successful";
+
+				}
+			}
+		}
+	}
+	else
+	{
+		cout << "file not found";
+	}
+}
+
+//FINISH THESE FUNCTIONS ONCE GETFILECONTENTS IS WORKING
+/*
+//searches & returns username for a given user
+string File::GetUsername()
+{
+
+}
+
+//searches & returns password for a given user
+string File::GetPassword()
+{
+
+}*/

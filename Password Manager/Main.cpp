@@ -12,8 +12,5 @@ int main()
 {
 	UserInfo currUser;
 
-
 	currUser.SetAppUserandPass();
-	
-
 }

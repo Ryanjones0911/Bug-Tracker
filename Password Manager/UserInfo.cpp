@@ -1,6 +1,8 @@
 #include "UserInfo.h"
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <filesystem>
 #include "File.h"
 
 
@@ -10,6 +12,7 @@ void UserInfo::SetAppUserandPass()
 	File currApp;
 	int userChoice;
 	string userFileName;
+	string user;
 
 	userChoice = currApp.GetUserChoice();
 
@@ -22,10 +25,22 @@ void UserInfo::SetAppUserandPass()
 
 	if (userChoice == 2)
 	{
-		currApp.GetFileContents();
+		cout << "Enter your name: ";
+		cin >> user;
+		currApp.Login(user);
 	}
+
 	if (userChoice == 3)
 	{
 		cout << "Goodbye";
 	}
 }
+
+void UserInfo::Login() //Not finished/not functioning
+{
+	File currUser;
+
+	currUser.GetFileContents();
+}
+	
+
