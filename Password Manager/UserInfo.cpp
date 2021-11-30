@@ -36,11 +36,6 @@ void UserInfo::SetAppUserandPass()
 	}
 }
 
-void UserInfo::Login() //Not finished/not functioning
-{
-	File currUser;
 
-	currUser.GetFileContents();
-}
 	
 

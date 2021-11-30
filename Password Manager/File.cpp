@@ -66,38 +66,6 @@ int File::GetUserChoice()
 	return userChoice;
 }
 
-//Gets contents of user file to be used by login function
-void File::GetFileContents()
-{
-	string desiredFile;
-	string path = std::filesystem::current_path().string() + "\\User Profiles\\";
-	string line;
-	ifstream myFile;
-
-	cout << "Enter name of user you wish to check: ";
-	cin.ignore();	// ignores prior newline character
-	getline(cin, desiredFile);
-	desiredFile += ".txt";
-	path += desiredFile;
-
-	myFile.open(path);
-
-	if (myFile.is_open())
-	{
-		cout << "user located & opened. Contents are as follows:" << endl;
-		while (getline(myFile, line))
-		{
-			cout << line << endl;
-		}
-		myFile.close();
-		return;
-	}
-	else;
-	{
-		cout << "Could not locate user";
-	}
-}
-
 void File::Login(string userProfile)
 {
 	ifstream file;
