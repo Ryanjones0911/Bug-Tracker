@@ -106,7 +106,6 @@ void File::Login(string userProfile)
 	string line; //for searching text file
 	string username;
 	string password;
-	int i;
 
 	//open file of user trying to login (info in userProfile)
 	file.open(userFile);
