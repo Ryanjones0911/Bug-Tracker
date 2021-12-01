@@ -14,7 +14,7 @@ void File::SetUsername(string userFile)
 	cout << "Enter username to store: ";
 	getline(cin, username);
 	myFile.open(userFile);
-	myFile << "username: " << username << endl;
+	myFile << username << endl;
 	myFile.close();
 }
 
@@ -26,7 +26,7 @@ void File::SetPassword(string userFile)
 	cout << "Enter password to store: ";
 	getline(cin, userPassword);
 	myFile.open(userFile, fstream::app);
-	myFile << "Password: " << userPassword << endl;
+	myFile << userPassword << endl;
 	myFile.close();
 }
 

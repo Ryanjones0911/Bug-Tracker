@@ -66,7 +66,7 @@ void User::Login(string userProfile)
 				}
 				if (line == password)
 				{
-					cout << "Password found. Login successful";
+					cout << "Password found. Login successful" << endl;
 
 				}
 			}
@@ -74,7 +74,7 @@ void User::Login(string userProfile)
 	}
 	else
 	{
-		cout << "file not found";
+		cout << "file not found" << endl;
 	}
 }
 

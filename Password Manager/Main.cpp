@@ -12,5 +12,9 @@ int main()
 {
 	User currUser;
 
-	currUser.InitialMenu();
+	while (true)
+	{
+		currUser.InitialMenu();
+	}
+
 }
