@@ -5,7 +5,7 @@ using namespace std;
 class User
 {
 	public:
-		void InitialMenu();
+		void InitialMenu(int userChoice);
 		int GetUserChoice();
 		void Login(string userProfile);
 };

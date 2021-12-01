@@ -6,15 +6,13 @@
 #include "File.h"
 
 
-void User::InitialMenu()
+void User::InitialMenu(int userChoice)
 {
 	User currUser;
 	File currApp;
-	int userChoice;
 	string userFileName;
 	string user;
 
-	userChoice = currUser.GetUserChoice();
 
 	if (userChoice == 1)
 	{
@@ -76,16 +74,6 @@ void User::Login(string userProfile)
 	{
 		cout << "file not found" << endl;
 	}
-}
-
-int User::GetUserChoice()
-{
-	int userChoice;
-
-	cout << "Input 1 to register, 2 to login, or 3 to quit: " << endl;
-	cin >> userChoice;
-
-	return userChoice;
 }
 
 
