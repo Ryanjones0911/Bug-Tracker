@@ -57,7 +57,7 @@ string File::AddNewFile()
 
 
 
-//FINISH THESE FUNCTIONS ONCE GETFILECONTENTS IS WORKING
+//Future possible functions for username/password reset ability
 /*
 //searches & returns username for a given user
 string File::GetUsername()

@@ -12,4 +12,3 @@ class File
 		//string GetUsername();
 		//string GetPassword();
 };
-

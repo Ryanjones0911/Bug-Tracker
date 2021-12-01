@@ -8,4 +8,3 @@ class User
 		int GetUserChoice();
 		void Login(string userProfile);
 };
-

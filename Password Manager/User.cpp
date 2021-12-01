@@ -88,10 +88,3 @@ int User::GetUserChoice()
 
 	return userChoice;
 }
-
-
-
-
-
-	
-
