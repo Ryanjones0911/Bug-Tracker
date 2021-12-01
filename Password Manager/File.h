@@ -8,10 +8,7 @@ class File
 		void SetUsername(string userFile);
 		void SetPassword(string userFile);
 		string AddNewFile();
-		int GetUserChoice();
 
-		//functions for viewing files & data
-		void Login(string userProfile);
 		//string GetUsername();
 		//string GetPassword();
 };

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "File.h"
-#include "UserInfo.h"
+#include "User.h"
 using namespace std;
 
 
@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-	UserInfo currUser;
+	User currUser;
 
-	currUser.SetAppUserandPass();
+	currUser.InitialMenu();
 }
